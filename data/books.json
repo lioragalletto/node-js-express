@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+           " author":"Moshe",
+            "titre": "Nodejs pour les nul",
+            "price":10,
+            "publication":2020,
+            "description": "livre qui permet d aprendre node.js",
+            "types":"informatique"
+            
+    },
+    {
+        "author":"maupassant",
+        "titre": "bel ami",
+        "price":30,
+        "publication":1980,
+        "description": "roman super",
+        "types":"roman"
+        
+    },
+    {
+        "author":"hafes haim",
+        "titre": "micna beroua",
+        "price":50,
+        "publication":"1000",
+        "description":" aprendre la micna",
+        "types":"religion"
+        
+    },
+    {
+        "author":"david",
+        "titre": "histoire de la guerre",
+        "price":45,
+        "publication":1990,
+        "description": "histoire de toute les guerre",
+        "types":"histoire"
+        
+    }
+    ]

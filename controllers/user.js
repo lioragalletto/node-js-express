@@ -62,26 +62,45 @@ export const getUser = (req, res) => {
 }
 
 
-export const updateUser = (req,res) => {
+
+export const updateUser = (req, res) => {
   try {
-    const {id} = req.params 
-    const body = req.body 
-    console.log({body})
-    const users = loadUsers(); 
-    const findUser = users.findIndex(user => user.id == id )
-    users[findUser] = { ...body};
-    const userString = JSON.stringify(users)
-    writeFileSync( "./data/users.json", userString)
-    console.log("user2", users);
-    successResponse(res,users)
+      const { id } = req.params;
+      const body = req.body;
+      console.log({ body });
+    
+      const users = loadUsers();
+      const findUserIndex = users.findIndex(user => user.id == id);
+     console.log(users,findUserIndex)
+     let updatedUser;
+      if (findUserIndex !== -1) {
+        updatedUser = { ...users[findUserIndex], ...body };
+        users[findUserIndex] = updatedUser;
 
-
-  }
-  catch (e){
-    errorResponse(res,'Error in load user or in user find')
-    console.log(e);
-  }
-
-  
-
+       writeFileSync("./data/users.json", JSON.stringify(users));
+      } else {
+        console.log('User not found.');
+      }
+      successResponse(res, updatedUser);
+    } catch (e) {
+      errorResponse(res, 'Error in load user or Update');
+    }
 }
+
+
+export const deleteUser = (req, res) => {
+  try {
+    const { id } = req.params;
+    const users = loadUsers();
+    const index = users.findIndex(user => user.id == id)
+
+    if (index === -1) return errorResponse(res, 'Utilisateur non trouvé');
+    users.splice(index, 1);
+      writeFileSync("./data/users.json", JSON.stringify(users, null, 2), 'utf8');
+
+    successResponse(res, { message: 'Utilisateur supprimé avec succès' });
+  } catch (e) {
+    errorResponse(res, 'Erreur lors de la suppression de l\'utilisateur');
+  }
+}; 
+

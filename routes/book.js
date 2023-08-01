@@ -6,7 +6,6 @@ const routerExpress = router()
 
 
 routerExpress.get('/', listBooks)
-routerExpress.get('/',listBooks)
 routerExpress.get('/:id', getBooks)
 routerExpress.put("/:id", updateBooks) 
 routerExpress.delete("/:id", deleteBooks)

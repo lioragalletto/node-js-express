@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync  } from 'fs'
 import {successResponse,errorResponse} from '../utils.js'
 
+
+// la mm chose que books , charge les users a partir de json et les convertir en js 
 export const loadUsers = () => {
     const users = readFileSync("./data/users.json",'utf8')
     return JSON.parse(users)

@@ -1,17 +1,9 @@
 export const successResponse = (res,data) => {
-
-    return res.sendStatus(200).send(data)
-
+    return res.status(200).send(data)
 }
 
- 
-
-export const errorResponse = (res,error) => {
-
-    return res.sendStatus(500).send({
-
+export const errorResponse = (res,error,codeStatus=500) => {
+    return res.status(codeStatus).send({
         error
-
     })
-
 }

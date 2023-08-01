@@ -1,0 +1,40 @@
+ [
+{
+"firstName":"yonathan",
+"lastName":"roos",
+"age":"39",
+"email":"meirroos@gmail.com",
+"phone": "0587221183",
+"role":"admin"
+
+},
+{
+    "firstName":"david",
+    "lastName":"shemama",
+    "age":"45",
+   "email":"davshe@email.com",
+    "phone": "0521515159",
+    "role":"seller"
+   
+ },
+ {
+        "firstName":"ron",
+        "lastName":"weslay",
+        "age":"21",
+        "email":"wesron@email.com",
+        "phone": "0502164879",
+        "role":"user"
+        
+  },
+  {
+            "firstName":"shay",
+            "lastName":"halimi",
+            "age":"45",
+            "email":"shayh@email.com",
+            "phone": "0587996655",
+            "role":"user"
+          
+            }
+
+
+]
